@@ -14,7 +14,7 @@ public class TaskExecutorConfig {
 
     // SimpleAsyncTaskScheduler will align with JDK 21 Virtual threads in Spring 6.1 (check spring boot)
     // SimpleAsyncTaskExecutor creates a new thread per call, this is inefficient except in JDK 21
-    @Bean
+    /*@Bean
     public TaskExecutor taskExecutor(){
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setCorePoolSize(5);
@@ -28,5 +28,10 @@ public class TaskExecutorConfig {
         //return new DelegatingSecurityContextAsyncTaskExecutor(executor1);
         // this passes along the SecurityContext
         return new DelegatingSecurityContextAsyncTaskExecutor(executor);
-    }
+    }*/
+
+    /*@Bean
+    public TaskExecutor taskExecutor(){
+        SimpleAsyncTaskExecutor simpleAsyncTaskExecutor = new SimpleAsyncTaskExecutor()
+    }*/
 }

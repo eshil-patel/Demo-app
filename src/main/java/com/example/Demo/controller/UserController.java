@@ -32,6 +32,18 @@ public class UserController {
         }
     }
 
+    @GetMapping("/get-name-platform-thread")
+    public ResponseEntity<List<String>> getNamePlatformThread(@RequestHeader("id") String id) {
+        try{
+            LOGGER.info("Request for id: {}",id);
+            List<String> nameList = userService.getNameFromDb(id).join();
+            return ResponseEntity.ok(nameList);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+            return ResponseEntity.internalServerError().body(List.of("Error fetching name"));
+        }
+    }
+
     @GetMapping("/mimic-external-service")
     public ResponseEntity<String> mimicExternalService(){
         return ResponseEntity.ok("Successfully called mock external service");

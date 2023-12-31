@@ -13,14 +13,22 @@ public class ExecutorServiceConfig {
     @Bean
     public ExecutorService executorService(){
         //JDK 17 compliant
-        return new DelegatingSecurityContextExecutorService(Executors.newFixedThreadPool(20));
+        //return new DelegatingSecurityContextExecutorService(Executors.newFixedThreadPool(20));
         //JDK 21 compliant
-        //return new DelegatingSecurityContextExecutorService(Executors.newVirtualThreadPerTaskExecutor());
+        return new DelegatingSecurityContextExecutorService(Executors.newVirtualThreadPerTaskExecutor());
     }
 
     @Bean("postgresExecutorService")
     public ExecutorService postgresExecutorService(){
-        return new DelegatingSecurityContextExecutorService(Executors.newFixedThreadPool(20));
+        // JDK 17 compliant
+        //return new DelegatingSecurityContextExecutorService(Executors.newFixedThreadPool(20));
+        //JDK 21 compliant
+        return new DelegatingSecurityContextExecutorService(Executors.newVirtualThreadPerTaskExecutor());
+    }
+
+    @Bean("postgresExecutorServicePlatformThread")
+    public ExecutorService postgresExecutorServicePlatformThreads(){
+        return new DelegatingSecurityContextExecutorService(Executors.newFixedThreadPool(50));
     }
 
 

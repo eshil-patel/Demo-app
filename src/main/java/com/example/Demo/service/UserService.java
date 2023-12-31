@@ -29,6 +29,15 @@ public class UserService {
         );
     }
 
+    public CompletableFuture<List<String>> getNameFromDbPlatformThread(String id) throws InterruptedException {
+        return CompletableFuture.allOf(validationOne(),
+                validationTwo(),
+                validationThree()
+        ).thenCompose(
+                ignoreResults -> userDao.getNameFromDbPlatformThread(id)
+        );
+    }
+
     public CompletableFuture<Void> validationOne(){
         LOGGER.info("Validation 1 token {}", TokenExtractorUtil.extractTokenFromSecurityContext());
         return CompletableFuture.completedFuture(null);

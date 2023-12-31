@@ -33,4 +33,19 @@ public class UserDao {
                 (rs,i) -> rs.getString("NAME")
         );
     }
+
+    public CompletableFuture<List<String>> getNameFromDbPlatformThread(String id){
+        LOGGER.info("DAO Token: {}",TokenExtractorUtil.extractTokenFromSecurityContext());
+        String sql = """
+                SELECT NAME from USERS where id = ?
+                """;
+        return baseDao.queryPlatformThread(
+                sql,
+                new Object[]{id},
+                new int[]{Types.VARCHAR},
+                (rs,i) -> rs.getString("NAME")
+        );
+    }
+
+
 }
