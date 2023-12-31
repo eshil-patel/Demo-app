@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     Logger LOGGER = LoggerFactory.getLogger(UserController.class);
-    private UserService userService;
+    private final UserService userService;
 
-    public UserController(UserService userService){
+    public UserController(final UserService userService){
         this.userService = userService;
     }
 
     @GetMapping("/get-name")
-    public ResponseEntity<List<String>> getName(@RequestHeader("id") String id) throws InterruptedException {
+    public ResponseEntity<List<String>> getName(@RequestHeader("id") String id) {
         try{
             LOGGER.info("Request for id: {}",id);
             List<String> nameList = userService.getNameFromDb(id).join();
@@ -30,5 +30,10 @@ public class UserController {
             System.out.println(e.getMessage());
             return ResponseEntity.internalServerError().body(List.of("Error fetching name"));
         }
+    }
+
+    @GetMapping("/mimic-external-service")
+    public ResponseEntity<String> mimicExternalService(){
+        return ResponseEntity.ok("Successfully called mock external service");
     }
 }

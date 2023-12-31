@@ -10,5 +10,6 @@ Notes for Java 21 integration with virtual threads:
 1. Use semaphore for database connections
 2. REST calls to other microservices + calls to a distributed cache will be on case by case basis
 3. Most beneficial for I/O heavy services 
+4. ThreadLocal variables might become a memory issue if you spawn too many virtual threads 
 
 
