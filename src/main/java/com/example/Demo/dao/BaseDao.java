@@ -21,11 +21,11 @@ public class BaseDao {
     public Semaphore postgresSemaphore;
 
     public BaseDao(@Qualifier("postgresExecutorService")ExecutorService executorService,
-                   JdbcTemplate jdbcTemplate){
+                   JdbcTemplate jdbcTemplate,
+                   Semaphore semaphore){
         this.executorService = executorService;
         this.jdbcTemplate = jdbcTemplate;
-        // make a fair semaphore, limiting postgres connections to 20
-        this.postgresSemaphore = new Semaphore(20,true);
+        this.postgresSemaphore = semaphore;
     }
 
     public <T> CompletableFuture<List<T>> query(String sql, Object[] params, int[] types, RowMapper<T> rowMapper){
