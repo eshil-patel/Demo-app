@@ -35,7 +35,9 @@ public class BaseDao {
     private <T> CompletableFuture<T> queryDbWithSemaphore(Supplier<T> supplier){
         try{
             postgresSemaphore.acquire();
-            return CompletableFuture.supplyAsync(supplier);
+            return CompletableFuture.supplyAsync(supplier,executorService);
+            // Java 21 compliant version, no need for executor service
+            //return CompletableFuture.supplyAsync(supplier);
         } catch (InterruptedException e){
             return CompletableFuture.completedFuture(null);
         }finally{

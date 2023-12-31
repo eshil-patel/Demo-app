@@ -14,7 +14,7 @@ public class SemaphoreConfig {
 
     @Bean
     public Semaphore postgresSemaphore(){
-        // make a fair semaphore, limiting the number of connections to postgres based on config value 
+        // make a fair semaphore, limiting the number of connections to postgres based on config value
         return new Semaphore(postgresConnectionMaxSize,true);
     }
 }
