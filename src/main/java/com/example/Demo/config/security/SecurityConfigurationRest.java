@@ -11,11 +11,10 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 @EnableWebSecurity
 public class SecurityConfigurationRest {
 
-    @Bean
-    public SecurityFilterChain customSecurityFilterChain(HttpSecurity http) throws Exception {
-        return http
-                .addFilterAfter(new CustomAuthenticationFilterChain(), BasicAuthenticationFilter.class)
-                .build();
-    }
-
+  @Bean
+  public SecurityFilterChain customSecurityFilterChain(HttpSecurity http) throws Exception {
+    return http.addFilterAfter(
+            new CustomAuthenticationFilterChain(), BasicAuthenticationFilter.class)
+        .build();
+  }
 }
