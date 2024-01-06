@@ -36,7 +36,7 @@ public class UserController {
     public ResponseEntity<List<String>> getNamePlatformThread(@RequestHeader("id") String id) {
         try{
             LOGGER.info("Request for id: {}",id);
-            List<String> nameList = userService.getNameFromDb(id).join();
+            List<String> nameList = userService.getNameFromDbPlatformThread(id).join();
             return ResponseEntity.ok(nameList);
         }catch(Exception e){
             System.out.println(e.getMessage());
