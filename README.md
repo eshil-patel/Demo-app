@@ -29,4 +29,13 @@ Using Pre-spring 3.2
 https://stackoverflow.com/questions/77282538/how-to-use-non-pooling-virtual-threads-to-execute-asynchronous-tasks-in-spring-b
 https://medium.com/@egorponomarev/spring-boot-3-2-with-virtual-threads-and-graalvm-out-of-the-box-1911d3ebf0b6
 https://mariadb.com/resources/blog/benchmark-jdbc-connectors-and-java-21-virtual-threads/
+General threads vs cores discussion
+https://stackoverflow.com/questions/34689709/java-threads-and-number-of-cores
+https://stackoverflow.com/questions/47489338/what-is-the-difference-between-thenapply-and-thenapplyasync-of-java-completablef
+OSC book
+https://os.ecci.ucr.ac.cr/slides/Abraham-Silberschatz-Operating-System-Concepts-10th-2018.pdf
+Deferred results and returning completable futures in the controller
+https://spring.io/reactive/
+Multi version release Jars
+https://nipafx.dev/multi-release-jars-multiple-java-versions/
 
