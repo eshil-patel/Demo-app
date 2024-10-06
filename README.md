@@ -38,4 +38,8 @@ Deferred results and returning completable futures in the controller
 https://spring.io/reactive/
 Multi version release Jars
 https://nipafx.dev/multi-release-jars-multiple-java-versions/
+GraphQL links
+https://stackoverflow.com/questions/75921067/spring-boot-graphql-querymapping-not-being-called
+https://www.graphql-java.com/tutorials/getting-started-with-spring-boot/#tutorials-written-by-the-community
+https://medium.com/@benjamin.habegger/step-by-step-guide-to-build-a-graphql-server-in-java-over-multiple-data-sources-30c0c7b4b409
 

@@ -27,6 +27,18 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 			<version>3.2.1</version>
 		</dependency>
+          <!--GraphQL dependency, trying out API to query database without any overfetching-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-graphql</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphql-java-extended-scalars</artifactId>
+			<version>21.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

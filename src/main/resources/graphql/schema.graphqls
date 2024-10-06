@@ -1,0 +1,27 @@
+type Query{
+    getUserInfo(
+        ids:[String],
+        names:[String],
+        dobs:[String],
+        gender:[Gender],
+        states:[String],
+        countries:[String]) : [userInfo]
+}
+
+type userInfo {
+    id : String,
+    name : String,
+    address : String,
+    dob : String,
+    gender: Gender,
+    state : String,
+    country : String
+}
+
+enum Gender {
+    M,F
+}
+
+# this is an imported scalar type, might want one for timestamptz
+scalar DateTime
+@specifiedBy(url: "https://scalars.graphql.org/andimarek/date-time.html")
