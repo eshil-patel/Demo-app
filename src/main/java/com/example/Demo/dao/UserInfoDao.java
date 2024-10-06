@@ -3,6 +3,7 @@ package com.example.Demo.dao;
 import com.example.Demo.model.Gender;
 import com.example.Demo.model.UserInfo;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Types;
@@ -22,14 +23,15 @@ public class UserInfoDao {
     }
 
     public CompletableFuture<List<UserInfo>> getUserInfo(Map<String,List<String>> argumentMap){
-        String whereClause = argumentMap.entrySet().stream()
+        String whereClauseArgs = argumentMap.entrySet().stream()
                 .map(e -> String.format("%s in (%s)",e.getKey(), Collections.nCopies(e.getValue().size(),"?")
                         .stream().collect(Collectors.joining(","))))
                 .collect(Collectors.joining(" AND "));
+        String whereClause = StringUtils.isNotBlank(whereClauseArgs) ? String.format("WHERE %s",whereClauseArgs) : "";
         String sql = String.format("""
                 SELECT ID,NAME,ADDRESS,DOB,GENDER,STATE,COUNTRY
                 FROM USER_INFO
-                WHERE %s
+                %s
                 """, whereClause);
         Object[] params = argumentMap.entrySet().stream().flatMap(e ->
                 e.getValue().stream()).toArray();
