@@ -15,10 +15,9 @@ import static com.example.Demo.util.Constants.POSTGRES_EXECUTOR_SERVICE;
 @Configuration
 public class ExecutorServiceConfig {
 
-  // bean is named the same, but conditional on the one in 21 not being instantiated
+  // bean has the same qualifier, but different methodName
   @Bean
   @Qualifier(POSTGRES_EXECUTOR_SERVICE)
-  @ConditionalOnJava(JavaVersion.SEVENTEEN)
   public ExecutorService postgres17ExecutorService() {
     // JDK 17 compliant
     return new DelegatingSecurityContextExecutorService(
