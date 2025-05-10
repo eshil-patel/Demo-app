@@ -43,3 +43,14 @@ https://stackoverflow.com/questions/75921067/spring-boot-graphql-querymapping-no
 https://www.graphql-java.com/tutorials/getting-started-with-spring-boot/#tutorials-written-by-the-community
 https://medium.com/@benjamin.habegger/step-by-step-guide-to-build-a-graphql-server-in-java-over-multiple-data-sources-30c0c7b4b409
 
+Using Datadog agent locally for traceId testing 
+Download the agent from maven, and use jar as agent for application 
+
+Start app with following VM args :
+-javaagent:"C:\Users\xeshi\.m2\repository\com\datadoghq\dd-java-agent\1.49.0\dd-java-agent-1.49.0.jar"
+-Ddd.profiling.enabled=true
+-Ddd.logs.injection=true
+-Ddd.agent.port=8126
+-Ddd.service=ecommerce-service
+-Ddd.env=local
+-XX:FlightRecorderOptions=stackdepth=256
