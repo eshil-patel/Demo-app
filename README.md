@@ -54,3 +54,6 @@ Start app with following VM args :
 -Ddd.service=ecommerce-service
 -Ddd.env=local
 -XX:FlightRecorderOptions=stackdepth=256
+
+Potentially useful links
+https://github.com/open-telemetry/opentelemetry-java-instrumentation/discussions/3168
