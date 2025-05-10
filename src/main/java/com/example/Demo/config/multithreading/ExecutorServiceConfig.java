@@ -32,7 +32,7 @@ public class ExecutorServiceConfig {
 
   @Bean(DELEGATING_EXECUTOR_SERVICE)
   public ExecutorService delegatingExecutorService(){
-    return new DelegatingSecurityContextExecutorService(ContextExecutorService.wrap(Executors.newFixedThreadPool(1)));
+    return new DelegatingSecurityContextExecutorService(ContextExecutorService.wrap(Executors.newFixedThreadPool(2)));
     //return new DelegatingSecurityContextExecutorService(Executors.newFixedThreadPool(1));
   }
 }
