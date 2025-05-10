@@ -57,3 +57,4 @@ Start app with following VM args :
 
 Potentially useful links
 https://github.com/open-telemetry/opentelemetry-java-instrumentation/discussions/3168
+https://docs.datadoghq.com/tracing/other_telemetry/connect_logs_and_traces/java/?tab=slf4jandlogback
