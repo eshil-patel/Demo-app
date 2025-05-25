@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
+import datadog.trace.api.GlobalTracer;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -71,7 +72,8 @@ public class UserController {
     Enumeration<String> headerNames = request.getHeaderNames();
     Map<String,String> headerMap = new HashMap<>();
     headerNames.asIterator().forEachRemaining(header -> headerMap.put(header,request.getHeader(header)));
-    LOGGER.info("Headers {}",headerMap);
+    LOGGER.info("Headers {}, traceId {}",headerMap,GlobalTracer.get().getTraceId());
+    MDC.clear();
     return userService.testThreadContextPropagation().thenApply(list -> {
       return ResponseEntity.ok(list);
     });

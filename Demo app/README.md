@@ -22,9 +22,13 @@ jdk.virtualThreadScheduler.parallelism
 jdk.virtualThreadScheduler.maxPoolSize
 spring.threads.virtual.enabled=true
 
+
 Helpful links
 https://vived.substack.com/p/spring-framework-61-and-spring-boot
 https://quarkus.io/blog/virtual-thread-1/#five-things-you-need-to-know-before-using-virtual-threads-for-everything)
+https://brydonleonard.github.io/learning/java/2024/02/26/java-21-virtual-threads.html
+https://www.javacodegeeks.com/2025/02/advanced-java-performance-tuning-for-low-latency-systems.html
+https://martinfowler.com/articles/lmax.html
 Using Pre-spring 3.2 
 https://stackoverflow.com/questions/77282538/how-to-use-non-pooling-virtual-threads-to-execute-asynchronous-tasks-in-spring-b
 https://medium.com/@egorponomarev/spring-boot-3-2-with-virtual-threads-and-graalvm-out-of-the-box-1911d3ebf0b6
