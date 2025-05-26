@@ -31,6 +31,7 @@ https://www.javacodegeeks.com/2025/02/advanced-java-performance-tuning-for-low-l
 https://martinfowler.com/articles/lmax.html
 https://anmolsehgal.medium.com/java-garbage-collectors-610689a5b125
 https://medium.com/@bless2k/low-latency-java-part-i-f3c29b9f5bed
+https://medium.com/@agamkakkar/how-we-scaled-a-spring-boot-app-from-50k-to-1m-requests-per-second-and-what-we-learned-e424b3922d93
 Using Pre-spring 3.2 
 https://stackoverflow.com/questions/77282538/how-to-use-non-pooling-virtual-threads-to-execute-asynchronous-tasks-in-spring-b
 https://medium.com/@egorponomarev/spring-boot-3-2-with-virtual-threads-and-graalvm-out-of-the-box-1911d3ebf0b6
